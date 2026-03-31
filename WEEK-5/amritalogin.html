@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Amrita Vishwa Vidyapeetham</title>
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background-image:url("background.jpg");
+background-size:cover;
+}
+.header{
+background:#8b0000;
+color:white;
+text-align:center;
+font-size:40px;
+padding:12px;
+font-weight:bold;
+}
+.menu{
+background:#1f6fb2;
+text-align:center;
+padding:10px;
+}
+
+.menu a{
+color:yellow;
+margin:12px;
+font-size:18px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.menu a:hover{
+text-decoration:underline;
+}
+.container{
+display:flex;
+padding:40px;
+}
+.login{
+width:280px;
+padding:20px;
+background:linear-gradient(135deg,#2c3e50,#27ae60);
+border-radius:10px;
+color:white;
+}
+
+.login h2{
+text-align:center;
+}
+
+input{
+width:100%;
+padding:8px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:8px;
+background:#0d6efd;
+border:none;
+color:white;
+border-radius:5px;
+}
+.info{
+flex:1;
+margin-left:40px;
+background:white;
+padding:25px;
+border-radius:10px;
+}
+.campus{
+display:none;
+}
+#home{
+display:block;
+}
+:target{
+display:block;
+}
+
+img{
+width:350px;
+margin-top:15px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+AMRITA VISHWA VIDHYAPEETHAM
+</div>
+
+<div class="menu">
+<a href="#amaravati">AMARAVATI</a>
+<a href="#amritapuri">AMRITAPURI</a>
+<a href="#bengaluru">BENGALURU</a>
+<a href="#chennai">CHENNAI</a>
+<a href="#coimbatore">COIMBATORE</a>
+</div>
+
+<div class="container">
+<div class="login">
+<h2>Login</h2>
+<input type="text" placeholder="Enter your email">
+<input type="password" placeholder="Enter your password">
+<label>
+<input type="checkbox"> Save me
+</label>
+<br><br>
+<button>Login</button>
+<p><a href="#" style="color:lightblue;">Forgot Password?</a></p>
+<p>Don't have an account?
+<a href="#" style="color:yellow;">Register</a></p>
+</div>
+<div class="info">
+<div id="home" class="campus">
+<h2>About the Campus</h2>
+<p>Click on a campus above to view its details.</p>
+</div>
+
+<div id="amaravati" class="campus">
+<h2>Amaravati Campus</h2>
+<p>Amrita Amaravati campus is located near the Krishna River and focuses on research and sustainability.</p>
+<img src="amaravati.jpg">
+</div>
+
+<div id="amritapuri" class="campus">
+<h2>Amritapuri Campus</h2>
+<p>Amritapuri campus is the headquarters of Amrita University and located in Kerala.</p>
+<img src="amritapuri.jpg">
+</div>
+
+<div id="bengaluru" class="campus">
+<h2>Bengaluru Campus</h2>
+<p>Bengaluru campus focuses on AI, robotics and advanced engineering programs.</p>
+<img src="bengaluru.jpg">
+</div>
+
+<div id="chennai" class="campus">
+<h2>Chennai Campus</h2>
+<p>Chennai campus provides programs in computer science, electronics and mechanical engineering.</p>
+<img src="chennai.jpg">
+</div>
+
+<div id="coimbatore" class="campus">
+<h2>Coimbatore Campus</h2>
+<p>Coimbatore campus is the largest campus offering engineering, medicine and research facilities.</p>
+<img src="coimbatore.jpg">
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
