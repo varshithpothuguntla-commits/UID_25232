@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Operations</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 350px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #5a67d8;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+
+    <script>
+        function checkEvenOdd() {
+            let a = document.getElementById("num").value;
+            if (a % 2 == 0) {
+                result.innerHTML = a + " is Even Number";
+            } else {
+                result.innerHTML = a + " is Odd Number";
+            }
+        }
+
+        function checkPrime() {
+            let n = document.getElementById("num").value;
+            let count = 0;
+
+            for (let i = 1; i <= n; i++) {
+                if (n % i == 0) count++;
+            }
+
+            if (count == 2)
+                result.innerHTML = n + " is Prime Number";
+            else
+                result.innerHTML = n + " is Not Prime Number";
+        }
+
+        function factorial() {
+            let n = document.getElementById("num").value;
+            let k = 1;
+
+            for (let i = 1; i <= n; i++) {
+                k *= i;
+            }
+
+            result.innerHTML = "Factorial is " + k;
+        }
+
+        function armstrong() {
+            let n = document.getElementById("num").value;
+            let temp = n;
+            let sum = 0;
+
+            while (n > 0) {
+                let r = n % 10;
+                sum += r * r * r;
+                n = Math.floor(n / 10);
+            }
+
+            if (sum == temp)
+                result.innerHTML = temp + " is Armstrong Number";
+            else
+                result.innerHTML = temp + " is Not Armstrong Number";
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Number Operations</h2>
+
+    <input type="number" id="num" placeholder="Enter a number">
+
+    <br>
+
+    <button onclick="checkEvenOdd()">Even / Odd</button>
+    <button onclick="checkPrime()">Prime</button>
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="armstrong()">Armstrong</button>
+
+    <p id="result"></p>
+</div>
+
+</body>
+</html>
