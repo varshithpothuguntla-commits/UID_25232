@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Largest of Five Numbers</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 340px;
+        }
+
+        h2 {
+            color: #ff7e5f;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 6px;
+            border-radius: 8px;
+            border: 2px solid #ff7e5f;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #feb47b;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #ff7e5f;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e96a50;
+        }
+    </style>
+
+    <script>
+        function findLargest() {
+            let a = Number(document.getElementById("n1").value);
+            let b = Number(document.getElementById("n2").value);
+            let c = Number(document.getElementById("n3").value);
+            let d = Number(document.getElementById("n4").value);
+            let e = Number(document.getElementById("n5").value);
+
+            let largest;
+
+            if (a >= b && a >= c && a >= d && a >= e)
+                largest = a;
+            else if (b >= a && b >= c && b >= d && b >= e)
+                largest = b;
+            else if (c >= a && c >= b && c >= d && c >= e)
+                largest = c;
+            else if (d >= a && d >= b && d >= c && d >= e)
+                largest = d;
+            else
+                largest = e;
+
+            alert("Largest number is: " + largest);
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Largest of Five Numbers</h2>
+
+    <input type="number" id="n1" placeholder="Enter first number">
+    <input type="number" id="n2" placeholder="Enter second number">
+    <input type="number" id="n3" placeholder="Enter third number">
+    <input type="number" id="n4" placeholder="Enter fourth number">
+    <input type="number" id="n5" placeholder="Enter fifth number">
+
+    <br>
+
+    <button onclick="findLargest()">Find Largest</button>
+</div>
+
+</body>
+</html>

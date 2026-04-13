@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd (0 to 15)</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #36d1dc, #5b86e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 350px;
+        }
+
+        h2 {
+            color: #5b86e5;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #5b86e5;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #3f6fd1;
+        }
+
+        #output {
+            margin-top: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+    </style>
+
+    <script>
+        function checkNumbers() {
+            let text = "";
+
+            for (let i = 0; i <= 15; i++) {
+                if (i % 2 == 0) {
+                    text += i + " is even<br>";
+                } else {
+                    text += i + " is odd<br>";
+                }
+            }
+
+            document.getElementById("output").innerHTML = text;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Even or Odd (0–15)</h2>
+
+    <button onclick="checkNumbers()">Show Result</button>
+
+    <div id="output"></div>
+</div>
+
+</body>
+</html>
