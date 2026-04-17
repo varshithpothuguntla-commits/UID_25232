@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form id="myForm">
+    Name: <br>
+    <input type="text" id="name"><br><br>
+
+    Email: <br>
+    <input type="text" id="email"><br><br>
+
+    Password: <br>
+    <input type="password" id="password"><br><br>
+
+    <button type="submit">Register</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let message = document.getElementById("message");
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name === "") {
+        event.preventDefault();
+        message.innerHTML = "Name cannot be empty";
+        message.className = "error";
+    }
+    else if (!emailPattern.test(email)) {
+        event.preventDefault();
+        message.innerHTML = "Enter a valid email";
+        message.className = "error";
+    }
+    else if (password.length < 6) {
+        event.preventDefault();
+        message.innerHTML = "Password must be at least 6 characters";
+        message.className = "error";
+    }
+    else {
+        message.innerHTML = "Form submitted successfully!";
+        message.className = "success";
+    }
+});
+</script>
+
+</body>
+</html>

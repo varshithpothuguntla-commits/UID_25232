@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="regForm">
+        <label>Email:</label><br>
+        <input type="text" id="email"><br><br>
+        <p id="error"></p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("regForm").addEventListener("submit", function(event) {
+            
+            let email = document.getElementById("email").value;
+            let error = document.getElementById("error");
+
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!pattern.test(email)) {
+                error.textContent = "Invalid email format";
+                event.preventDefault(); 
+            } else {
+                error.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+</html>

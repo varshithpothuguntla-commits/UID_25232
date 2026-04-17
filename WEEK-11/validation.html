@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Username Validation</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+        #message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Enter Username</h2>
+
+    <input type="text" id="username" placeholder="Enter username">
+    <p id="message"></p>
+
+    <script>
+        let usernameInput = document.getElementById("username");
+        let message = document.getElementById("message");
+
+        usernameInput.addEventListener("input", function() {
+            let value = usernameInput.value;
+
+            if (value.length < 5) {
+                message.textContent = "Username must be at least 5 characters";
+            } else {
+                message.textContent = "Username is valid";
+                message.style.color = "green";
+            }
+
+            if (value.length === 0) {
+                message.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+</html>
